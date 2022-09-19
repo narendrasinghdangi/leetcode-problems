@@ -1,9 +1,22 @@
-class Solution:
-    def findDuplicate(self, paths: list[str]) -> list[list[str]]:
-        l1 = []
-        l2 = []
-        for i in paths:
-            print(i)
+from collections import defaultdict
+
+
+class Solution():
+    def findDuplicat(self, paths: list[str]) -> list[list[str]]:
+        files = defaultdict(list)
+        output = []
+
+        for path in paths:
+            pathList = path.split(" ")
+            for p in pathList[1:]:
+                p = p.replace(")", "")
+                p = p.split("(")
+                files[p[-1]].append(pathList[0] + "/" + p[0])
+                print(files)
+        for value, paths in files.items():
+            if len(paths) > 1:
+                output.append(paths)
+        print(output)
 
 
 s = Solution()
