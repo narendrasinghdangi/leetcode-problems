@@ -1,15 +1,15 @@
 class Solution:
     def findLength(self, nums1: list[int], nums2: list[int]) -> int:
-        result = 0
-        dp = [[0]*(len(nums2)+1) for _ in range(len(nums1)+1)]
-        for i in range(len(nums1)):
-            for j in range(len(nums2)):
-                if nums1[i] == nums2[j]:
-                    new_value = dp[i][j]+1
-                    dp[i+1][j+1] = new_value
-                    result = max(result, new_value)
-                    print(result)
-                    print(dp)
+        strnum2 = "".join([str(i) for i in nums2])
+        strmax = ""
+        ans = 0
+        for i in nums1:
+            strmax = strmax+str(i)
+            if strmax in strnum2:
+                ans = max(ans, len(strmax))
+            else:
+                strmax = strmax[1:]
+            print(strmax)
 
 
 s = Solution()
