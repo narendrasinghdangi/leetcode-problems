@@ -1,10 +1,10 @@
 class Solution:
     def findLength(self, nums1: list[int], nums2: list[int]) -> int:
-        strnum2 = "".join([str(i) for i in nums2])
+        strnum2 = "".join([chr(i) for i in nums2])
         strmax = ""
         ans = 0
         for i in nums1:
-            strmax = strmax+str(i)
+            strmax = strmax+chr(i)
             if strmax in strnum2:
                 ans = max(ans, len(strmax))
             else:
