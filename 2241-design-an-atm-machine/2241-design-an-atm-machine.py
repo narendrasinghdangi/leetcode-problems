@@ -10,7 +10,6 @@ class ATM:
 
     def withdraw(self, amount: int) -> List[int]:
         ans=[0,0,0,0,0]
-        if(amount%10):return[-1]
         if(amount>=500 and self.li[4]>0):
             ans[4]+=min(self.li[4],(amount//500))
             amount-=(500*ans[4])
