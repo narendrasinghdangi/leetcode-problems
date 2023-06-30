@@ -1,12 +1,4 @@
 # Write your MySQL query statement below
-(Select u.name as results 
-from MovieRating as m, Users as u 
-where u.user_id = m.user_id Group By m.user_id 
-Order by count(m.user_id) desc, u.name limit 1)
+(select U.name as results from Users U, MovieRating M where U.user_id=M.user_id group by M.user_id order by count(M.user_id) desc, U.name limit 1)
 union all
-(Select m.title as results
-from MovieRating as r, Movies as m
-where m.movie_id = r.movie_id 
-and r.created_at like "2020-02-%"
-Group By r.movie_id 
-Order by avg(r.rating) desc, m.title limit 1);
+(select Mo.title as results from Movies Mo, MovieRating MR where Mo.movie_id=MR.movie_id and MR.created_at like "2020-02-%" group by MR.movie_id order by avg(MR.rating) desc, Mo.title limit 1); 
