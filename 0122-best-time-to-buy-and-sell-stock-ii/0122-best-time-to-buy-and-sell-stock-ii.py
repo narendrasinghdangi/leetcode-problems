@@ -1,6 +1,6 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         s=0
-        for a, b in pairwise(prices):
-            s=s+max(b - a, 0)
+        for i in range(len(prices)-1):
+            s=s+max(prices[i+1] - prices[i], 0)
         return s
