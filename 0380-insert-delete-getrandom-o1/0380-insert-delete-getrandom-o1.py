@@ -11,10 +11,9 @@ class RandomizedSet:
             return True
 
     def remove(self, val: int) -> bool:
-        for i in self.li:
-            if i==val:
-                self.li.remove(i)
-                return True
+        if val in self.li:
+            self.li.remove(val)
+            return True
         else:
             return False
         
