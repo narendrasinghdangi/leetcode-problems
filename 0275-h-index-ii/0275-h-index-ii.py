@@ -1,7 +1,14 @@
 class Solution:
-    def hIndex(self, citations: List[int]) -> int:
-        citations=citations[::-1]
-        for h in range(len(citations)):
-            if h>=citations[h]:
-                return h
-        return len(citations)
+    def hIndex(self, cit: List[int]) -> int:
+        
+        l,r = 0, len(cit)
+        
+        while l<=r:
+            mid = (l+r)>>1
+            
+            if cit[-mid]>=mid:
+                l = mid+1
+            else:
+                r = mid-1
+                
+        return r
