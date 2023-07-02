@@ -4,7 +4,6 @@ class Solution:
         numerals = [ "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" ]
         res = ""
         for i, v in enumerate(values):
-            if num>=v:
-                res =res+ numerals[i]*(num//v)
-                num =num % v
+            res =res+ numerals[i]*(num//v)
+            num =num % v
         return res
