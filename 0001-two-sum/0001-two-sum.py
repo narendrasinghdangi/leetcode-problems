@@ -6,4 +6,3 @@ class Solution:
             if compl in d:
                 return (d[compl], idx)
             d[val] = idx
-        return None
