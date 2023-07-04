@@ -7,7 +7,4 @@ class Solution:
                 d[lol]=[i]
             else:
                 d[lol].append(i)
-        li=[]
-        for i in d:
-            li.append(d[i])
-        return li
+        return list(d.values())
