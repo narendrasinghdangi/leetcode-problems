@@ -16,7 +16,7 @@ class Solution:
                         return False
             r=[]
             c=[]
-        cross3 = {}
+        
         for i in range(3):
             for j in range(3):
                 cross3 = {}
