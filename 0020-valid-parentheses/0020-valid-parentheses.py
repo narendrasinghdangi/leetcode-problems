@@ -13,8 +13,6 @@ class Solution:
                     li.pop()
                 else:
                     return False
-        if len(li)==0:
-            return True
-        return False
+        return len(li)==0
                     
             
