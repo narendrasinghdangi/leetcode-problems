@@ -10,15 +10,15 @@ class Solution:
             if node1:
                 if not node2:
                     f[0]=0
-                    return False
+                    return
             if node2:
                 if not node1:
                     f[0]=0
-                    return False
+                    return
             if node1 and node2:
                 if node1.val!=node2.val:
                     f[0]=0
-                    return False
+                    return
                 DFS(node1.left,node2.left)
                 DFS(node1.right,node2.right)
         f=[1]
