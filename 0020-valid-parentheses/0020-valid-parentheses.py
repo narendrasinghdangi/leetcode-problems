@@ -15,7 +15,6 @@ class Solution:
                     return False
         if len(li)==0:
             return True
-        else:
-            return False
+        return False
                     
             
