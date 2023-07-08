@@ -7,20 +7,18 @@
 class Solution:
     def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
         li=[]
-        def BST(node):
+        def DFS(node):
             if node:
                 li.append(node.val)
-                BST(node.left)
-                BST(node.right)
-            
-        BST(root)
-        m=float("inf")
+                DFS(node.left)
+                DFS(node.right)
+        DFS(root)
+        m=10**5
         for i in range(len(li)):
-            for j in range(i,len(li)):
-                if abs(li[i]-li[j])<m and i!=j:
+            for j in range(i+1,len(li)):
+                if abs(li[i]-li[j])<m:
                     m=abs(li[i]-li[j])
         return m
-                
         
         
                 
