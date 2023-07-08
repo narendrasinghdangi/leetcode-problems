@@ -14,10 +14,10 @@ class Solution:
                 DFS(node.right)
         DFS(root)
         m=10**5
-        for i in range(len(li)):
-            for j in range(i+1,len(li)):
-                if abs(li[i]-li[j])<m:
-                    m=abs(li[i]-li[j])
+        li.sort()
+        for i in range(len(li)-1):
+            if abs(li[i]-li[i+1])<m:
+                m=abs(li[i]-li[i+1])
         return m
         
         
