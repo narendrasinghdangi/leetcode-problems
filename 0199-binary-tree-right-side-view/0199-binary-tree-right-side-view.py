@@ -10,13 +10,14 @@ class Solution:
             return
         ans=[]
         q=[root]
-        while q:        
-            ans.append(q[-1].val)
-            lv=[]
-            for node in q:
+        while q:
+            n=len(q)
+            for i in range(n):
+                node=q.pop(0)
+                if i==n-1:
+                    ans.append(node.val)
                 if node.left:
-                    lv.append(node.left)
+                    q.append(node.left)
                 if node.right:
-                    lv.append(node.right)
-            q=lv
+                    q.append(node.right)
         return ans
