@@ -1,5 +1,6 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        for i in range(len(nums)):
-            if nums[i] not in nums[:i]+nums[i+1:]:
-                return nums[i]
+        d=Counter(nums)
+        for i in d:
+            if d[i]==1:
+                return i
