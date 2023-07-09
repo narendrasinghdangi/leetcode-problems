@@ -3,4 +3,4 @@ class Solution:
         a=int(a,2)
         b=int(b,2)
         s=a+b
-        return bin(s)[2:]
+        return format(s,"b")
