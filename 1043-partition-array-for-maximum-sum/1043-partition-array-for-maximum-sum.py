@@ -5,7 +5,6 @@ class Solution:
         arr.append(0)
         dp=[0]*(len(arr)+1)
         dp[0]=0
-        print(dp)
         for i in range(1,k+1):
             dp[i]=max(arr[:i])*i
         for i in range(k,len(arr)):
@@ -13,7 +12,6 @@ class Solution:
             for j in range(k):
                 lol.append(dp[i-j]+max(arr[i-j:i+1])*(j+1))
             dp[i+1]=max(lol)
-        print(dp)
         return dp[-2]
             
             
