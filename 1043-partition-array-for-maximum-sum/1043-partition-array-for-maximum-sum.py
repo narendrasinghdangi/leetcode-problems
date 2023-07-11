@@ -6,10 +6,12 @@ class Solution:
         for i in range(1,k+1):
             dp[i]=max(arr[:i])*i
         for i in range(k,len(arr)):
-            lol=[]
+            m=0
             for j in range(k):
-                lol.append(dp[i-j]+max(arr[i-j:i+1])*(j+1))
-            dp[i+1]=max(lol)
+                lol=dp[i-j]+max(arr[i-j:i+1])*(j+1)
+                if lol>m:
+                    m=lol
+            dp[i+1]=m
         return dp[-2]
             
             
