@@ -1,6 +1,7 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        o,t=1,1
-        for i in range(n-1):
-            o,t=o+t,o
-        return o
+        li=[1,2]
+        for i in range(n-2):
+            li.append(li[i]+li[i+1])
+        return li[n-1]
+        
