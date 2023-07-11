@@ -1,7 +1,8 @@
 class Solution:
     def twoEggDrop(self, n: int) -> int:
         c=0
-        while n>0:
-            c=c+1
-            n=n-c
-        return c
+        i=1
+        while n>c:
+            c=c+i
+            i=i+1
+        return i-1
