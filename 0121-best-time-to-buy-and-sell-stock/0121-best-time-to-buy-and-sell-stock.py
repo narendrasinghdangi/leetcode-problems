@@ -8,4 +8,3 @@ class Solution:
             if prices[i]-min_val>ans:
                 ans=prices[i]-min_val
         return ans
-            
