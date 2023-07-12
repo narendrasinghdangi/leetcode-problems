@@ -6,7 +6,7 @@ class Solution:
                 return 0
             if (alice,i,m) in dp:
                 return dp[(alice,i,m)]
-            res=0 if alice else float("inf")
+            res=0 if alice else 1000000
             total=0
             for x in range(1,2*m+1):
                 if i+x>len(piles):
