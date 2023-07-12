@@ -1,18 +1,18 @@
 class Solution:
     def distributeCookies(self, cookies: List[int], k: int) -> int:
-        mini=float("inf")
-        ch=[0]*k
-        def dfs(i,ch):
-            nonlocal mini
-            if i==len(cookies):
-                mini=min(mini,max(ch))
+        def dfs(cookies, index,children):
+            nonlocal ans
+            if index == len(cookies):
+                unfairness = max(children)
+                ans = min(ans, unfairness)
                 return
-            for idx in range(len(ch)):
-                if ch[idx]+cookies[i]>=mini:
-                    continue
-                ch[idx]+=cookies[i]
-                dfs(i+1, ch)
-                ch[idx]-=cookies[i]
-                
-        dfs(0,ch)
-        return mini
+            for i in range(len(children)):
+                children[i] += cookies[index]
+                dfs(cookies, index+1, children)
+                children[i] -= cookies[index]
+                if children[i] == 0: break
+
+        ans = float('inf')
+        children = [0]*k
+        dfs(cookies, 0, children)
+        return ans
