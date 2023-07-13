@@ -9,7 +9,6 @@ class Solution:
                 if nums[j]>i:
                     li.append(j)
                     break
-                j=j+1
             if i>=nums[-1]:
                 li.append(len(nums))
         return li
