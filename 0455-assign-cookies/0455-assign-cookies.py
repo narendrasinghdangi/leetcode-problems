@@ -7,7 +7,6 @@ class Solution:
         for i in range(len(s)):
             if g[c]<=s[i]:
                 c+=1
-                j+=1
-            if j>=len(g):
+            if c>=len(g):
                 break
         return c
