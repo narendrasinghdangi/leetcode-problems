@@ -1,7 +1,6 @@
 class Solution:
     def canThreePartsEqualSum(self, arr: List[int]) -> bool:
-        s=sum(arr)
-        s=s/3
+        s=sum(arr)/3
         su=0
         c=0
         i=0
