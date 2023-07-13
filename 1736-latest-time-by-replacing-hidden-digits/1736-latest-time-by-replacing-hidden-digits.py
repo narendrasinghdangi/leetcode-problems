@@ -5,9 +5,9 @@ class Solution:
             time[0]="2"
             time[1]="3"
         if time[1]=="?":
-            if time[0]=="0" or time[0]=="1":
+            if time[0]!="2":
                 time[1]="9"
-            if time[0]=="2":
+            else:
                 time[1]="3"
         if time[0]=="?":
             if int(time[1])>3:
