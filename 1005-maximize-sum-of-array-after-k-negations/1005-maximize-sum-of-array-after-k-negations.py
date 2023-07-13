@@ -9,6 +9,7 @@ class Solution:
                     return sum(nums)
         
         nums.sort()
-        if k % 2 == 0: return sum(nums)
-        nums[0] *= -1
+        if k % 2 == 0:
+            return sum(nums)
+        nums[0] = -nums[0]
         return sum(nums)
