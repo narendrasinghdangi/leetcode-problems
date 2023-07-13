@@ -4,4 +4,4 @@ class Solution:
             return k
         if numOnes+numZeros>=k:
             return numOnes
-        return numOnes-(k-numOnes-numZeros)
+        return 2*numOnes+numZeros-k
