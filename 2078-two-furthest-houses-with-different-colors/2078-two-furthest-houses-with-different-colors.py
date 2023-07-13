@@ -3,7 +3,6 @@ class Solution:
         m=0
         for i in range(1,len(colors)):
             if colors[0]!=colors[i]:
-                if i>m:
                     m=i
         for i in range(len(colors)-1):
             if colors[-1]!=colors[i]:
