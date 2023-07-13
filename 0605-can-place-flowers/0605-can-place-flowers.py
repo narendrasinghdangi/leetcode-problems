@@ -1,11 +1,10 @@
 class Solution:
     def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
-        if len(flowerbed)==1 and flowerbed[0]==0 and n==1:
+        if len(flowerbed)==1 and flowerbed[0]==0:
             return True
         if len(flowerbed)==1 and flowerbed[0]==1 and n==1:
             return False
-        if len(flowerbed)==1 and flowerbed[0]==0 and n==0:
-            return True
+        
             
         c=0
         if flowerbed[0]==0 and flowerbed[1]==0:
