@@ -1,7 +1,5 @@
 class Solution:
     def pancakeSort(self, arr: List[int]) -> List[int]:
-        if len(arr)==1:
-            return []
         i=0
         j=len(arr)-1
         li=[]
