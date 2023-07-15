@@ -7,9 +7,12 @@ class Solution:
         a=0
         b=0
         for i in range(len(s1)):
-            if s1[i]>=s2[i]:
+            if s1[i]==s2[i]:
                 a=a+1
-            if s2[i]>=s1[i]:
+                b=b+1
+            elif s1[i]>s2[i]:
+                a=a+1
+            else:
                 b=b+1
         return a==len(s1) or b==len(s1)
                 
