@@ -7,6 +7,8 @@ class Solution:
                 return 0 
             if (left,right) in dp:
                 return dp[(left,right)]
+            if left + 1 == right:
+                return arr[left] * arr[right]
             
             min_cost = float('inf')
             for p in range(left,right):
