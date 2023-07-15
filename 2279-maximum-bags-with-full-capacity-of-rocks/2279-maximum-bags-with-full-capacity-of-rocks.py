@@ -5,7 +5,6 @@ class Solution:
         for i in range(len(rocks)):
             dp[i]=capacity[i]-rocks[i]
         dp.sort()
-        print(dp)
         for i in range(len(dp)):
             if dp[i]==0:
                 c=c+1
