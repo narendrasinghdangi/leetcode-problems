@@ -1,8 +1,7 @@
 class Solution:
     def getSmallestString(self, n: int, k: int) -> str:
-        l=n
         s=""
-        for i in range(l):
+        for i in range(n):
             if k-26<n-1:
                 for j in range(n-1):
                     s=s+"a"
