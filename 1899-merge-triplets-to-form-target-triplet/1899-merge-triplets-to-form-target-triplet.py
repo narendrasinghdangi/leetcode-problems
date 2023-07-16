@@ -18,4 +18,3 @@ class Solution:
         if target[2] not in c:
             return False
         return True
-            
