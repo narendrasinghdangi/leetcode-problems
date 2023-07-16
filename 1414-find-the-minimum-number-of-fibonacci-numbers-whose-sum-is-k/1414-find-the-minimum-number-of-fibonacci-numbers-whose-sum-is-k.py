@@ -4,9 +4,7 @@ class Solution:
         while k:
             a=1
             b=1
-            if k==1:
-                s=s+1
-                return s
+           
             for i in range(k):
                 if k>=(a+b):
                     a,b=b,a+b
