@@ -2,9 +2,9 @@ class Solution:
     def findMinFibonacciNumbers(self, k: int) -> int:
         s=0
         while k:
-            a=1
-            b=2
-            if k==1 or k==2:
+            a=2
+            b=3
+            if k==1 or k==2 or k==3 or k==5:
                 s=s+1
                 return s
             for i in range(k):
