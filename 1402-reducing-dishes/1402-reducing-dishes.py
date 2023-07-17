@@ -6,6 +6,9 @@ class Solution:
             s=0
             for j in range(len(satisfaction)):
                 s=s+satisfaction[j]*(j+1)
-            m=max(m,s)
-            satisfaction.pop(0)
+            if m==s and m>0:
+                break
+            else:
+                m=max(m,s)
+                satisfaction.pop(0)
         return m
