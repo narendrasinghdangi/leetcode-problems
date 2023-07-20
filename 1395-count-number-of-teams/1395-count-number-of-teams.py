@@ -1,14 +1,19 @@
 class Solution:
     def numTeams(self, rating: List[int]) -> int:
-        upper_dps = [0]*len(rating)
-        lower_dps = [0]*len(rating)
-        c=0
-        for i in range(len(rating)):
-            for j in range(i):
-                if rating[j] < rating[i]:
-                    c += upper_dps[j]
-                    upper_dps[i] += 1
+        greater = defaultdict(int)
+        lesser = defaultdict(int)
+        for i in range(len(rating)-1):
+            for j in range(i+1, len(rating)):
+                if rating[i] < rating[j]:
+                    greater[i] += 1
                 else:
-                    c += lower_dps[j]
-                    lower_dps[i] += 1
-        return c
+                    lesser[i] += 1
+        ans = 0
+        print(greater, lesser)
+        for i in range(len(rating)-2):
+            for j in range(i+1, len(rating)):
+                if rating[i] < rating[j]:
+                    ans+=greater[j]
+                else:
+                    ans+=lesser[j]
+        return ans
