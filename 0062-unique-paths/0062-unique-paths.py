@@ -1,3 +1,13 @@
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
-        return int(math.factorial(m+n-2) / (math.factorial(m-1)*math.factorial(n-1)))
+        dp = [0] * n
+        dp[0] = 1
+        
+        # find 
+        for i in range(m):
+            for j in range(1,n):
+                dp[j] += dp[j - 1] 
+        
+        # return 
+        return dp[-1]
+            
