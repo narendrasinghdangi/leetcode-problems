@@ -2,6 +2,7 @@ class Solution:
     def numTeams(self, rating: List[int]) -> int:
         greater = defaultdict(int)
         lesser = defaultdict(int)
+        print(greater)
         for i in range(len(rating)-1):
             for j in range(i+1, len(rating)):
                 if rating[i] < rating[j]:
