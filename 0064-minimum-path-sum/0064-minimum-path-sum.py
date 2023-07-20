@@ -2,8 +2,7 @@ class Solution:
     def minPathSum(self, grid: List[List[int]]) -> int:
         n=len(grid)
         m=len(grid[0])
-        @lru_cache(None)
-        
+        @lru_cache(None)        
         def dfs(i,j):
             if i==0 and j==0:
                 return grid[i][j]
