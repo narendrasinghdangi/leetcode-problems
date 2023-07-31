@@ -1,21 +1,31 @@
 class Solution:
     def maxCompatibilitySum(self, students: List[List[int]], mentors: List[List[int]]) -> int:
-    
-        def maxCompatibilityUtil(ssf,visited,res,idx):
-            if idx==len(students):
-                res[0] = max(res[0],ssf)
-                return 
-
-            for i in range(len(mentors)):
-                if visited[i]==False:
-                    visited[i]=True
-                    temp = 0
-                    for j in range(len(mentors[i])):
-                        if mentors[i][j]==students[idx][j]:
-                            temp = temp+1
-                    maxCompatibilityUtil(ssf+temp,visited,res,idx+1)
-                    visited[i]=False
-        res = [-1]
-        visited = [False]*len(students)
-        maxCompatibilityUtil(0,visited,res,0)
-        return res[0]
+        n = len(students)
+        
+        def get_score(m, s):
+            c = 0
+            for i in range(len(m)):
+                if m[i] == s[i]:
+                    c += 1
+            
+            return c
+        
+        @cache
+        def dp(curr_index_student, tuple_ment):
+            
+            if curr_index_student == n:
+                return 0
+            
+            list_ment = list(tuple_ment)
+            m = -inf
+            
+            for mentor_index in range(n):
+                if list_ment[mentor_index-1] == True:
+                    continue
+                list_ment[mentor_index-1] = True
+                score = get_score(mentors[mentor_index], students[curr_index_student])
+                m = max(m, score + dp(curr_index_student+1, tuple(list_ment)))
+                list_ment[mentor_index-1] = False
+            
+            return m
+        return dp(0, tuple([False] * n))
