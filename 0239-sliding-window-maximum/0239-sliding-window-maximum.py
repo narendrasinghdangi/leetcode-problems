@@ -1,17 +1,13 @@
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
-        n=len(nums)
-        seen=[]
-        ans=[]   
-        for i in range(n):
-            if seen and seen[0]==i-k:
-                seen.pop(0)
-
-            while seen and nums[seen[-1]]<nums[i]:
-                seen.pop()
-
-            seen.append(i)
+        q=[]
+        li=[]
+        for i in range(len(nums)):
+            if q and q[0]==i-k:
+                q.pop(0)
+            while q and nums[i]>nums[q[-1]]:
+                q.pop()
+            q.append(i)
             if i>=k-1:
-                ans.append(nums[seen[0]])
-        return ans
-                
+                li.append(nums[q[0]])
+        return li
