@@ -7,9 +7,22 @@ class Solution:
         s2o={}
         for i in range(len(s1)):
             if i%2==0:
-                s1e[s1[i]]=s1e.get(s1[i],0)+1
-                s2e[s2[i]]=s2e.get(s2[i],0)+1
+                if s1[i] in s1e:
+                    s1e[s1[i]]=s1e[s1[i]]+1
+                else:
+                    s1e[s1[i]]=1
+                if s2[i] in s2e:
+                    s2e[s2[i]]=s2e[s2[i]]+1
+                else:
+                    s2e[s2[i]]=1
             else:
-                s1o[s1[i]]=s1o.get(s1[i],0)+1
-                s2o[s2[i]]=s2o.get(s2[i],0)+1
+                if s1[i] in s1o:
+                    s1o[s1[i]]=s1o[s1[i]]+1
+                else:
+                    s1o[s1[i]]=1
+                if s2[i] in s2o:
+                    s2o[s2[i]]=s2o[s2[i]]+1
+                else:
+                    s2o[s2[i]]=1
         return s1e==s2e and s1o==s2o
+            
