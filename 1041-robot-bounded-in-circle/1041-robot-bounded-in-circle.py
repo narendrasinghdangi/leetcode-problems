@@ -3,7 +3,7 @@ class Solution:
         a=[0,0]
         b=[0,0]
         d=0
-        for j in range(100):
+        for j in range(4):
             for i in ins:
                 if i=="L":
                     d=d-1
