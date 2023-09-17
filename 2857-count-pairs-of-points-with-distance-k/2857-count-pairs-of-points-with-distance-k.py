@@ -4,6 +4,6 @@ class Solution:
         res = 0
         for x1, y1 in coordinates:
             for x in range(k + 1):
-                res += count[x1 ^ x, y1 ^ (k - x)]
+                res =res+ count[x1 ^ x, y1 ^ (k - x)]
             count[x1, y1] += 1
         return res
