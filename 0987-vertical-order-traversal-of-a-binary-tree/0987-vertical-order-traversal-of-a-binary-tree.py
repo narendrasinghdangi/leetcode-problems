@@ -18,11 +18,13 @@ class Solution:
             if node.right:
                 q.append([node.right,r+1,c+1])
         ans=[]
-        for i in sorted(d):
-            temp=d[i]
-            temp.sort()
+        keys=list(d.keys())
+        keys.sort()
+        for i in keys:
+            lol=d[i]
+            lol.sort()
             t=[]
-            for j in temp:
-                t.append(j[1])
+            for i in lol:
+                t.append(i[1])
             ans.append(t)
         return ans
