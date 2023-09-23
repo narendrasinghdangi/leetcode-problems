@@ -18,9 +18,7 @@ class Solution:
             if node.right:
                 q.append([node.right,r+1,c+1])
         ans=[]
-        keys=list(d.keys())
-        keys.sort()
-        for i in keys:
+        for i in sorted(d):
             lol=d[i]
             lol.sort()
             t=[]
