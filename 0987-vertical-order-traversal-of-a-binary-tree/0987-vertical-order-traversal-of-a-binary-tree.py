@@ -24,7 +24,7 @@ class Solution:
             lol=d[i]
             lol.sort()
             t=[]
-            for i in lol:
-                t.append(i[1])
+            for j in lol:
+                t.append(j[1])
             ans.append(t)
         return ans
