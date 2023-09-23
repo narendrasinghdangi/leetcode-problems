@@ -12,15 +12,13 @@ class Solution:
         
         while q:
             qlen=len(q)
-            ans=[]
+            ans=q[0].val
             for i in range(qlen):
                 node=q.pop(0)
-                ans.append(node.val)
                 if node.left:
                     q.append(node.left)
                 if node.right:
                     q.append(node.right)
-            lol=ans[0]
-        return lol
+        return ans
         
                 
